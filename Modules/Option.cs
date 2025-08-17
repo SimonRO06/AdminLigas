@@ -1,5 +1,8 @@
 using UI;
 using Tournament;
+using Team;
+using Player;
+using Transfer;
 
 namespace Option
 {
@@ -48,15 +51,19 @@ namespace Option
             {
                 case "1":
                     TournamentMenu.AddTournament();
+                    MenuOption.TournamentMenuOptions();
                     break;
                 case "2":
                     TournamentMenu.SearchTournament();
+                    MenuOption.TournamentMenuOptions();
                     break;
                 case "3":
                     TournamentMenu.DeleteTournament();
+                    MenuOption.TournamentMenuOptions();
                     break;
                 case "4":
                     TournamentMenu.UpdateTournament();
+                    MenuOption.TournamentMenuOptions();
                     break;
                 case "5":
                     MenuOption.MainMenuOptions();
@@ -77,16 +84,26 @@ namespace Option
             switch (seleccion)
             {
                 case "1":
+                    TeamMenu.AddTeam();
+                    MenuOption.TeamMenuOptions();
                     break;
                 case "2":
+                    TeamMenu.AddTecnicalBody();
+                    MenuOption.TeamMenuOptions();
                     break;
                 case "3":
+                    TeamMenu.AddMedicalBody();
+                    MenuOption.TeamMenuOptions();
                     break;
                 case "4":
+                    TeamMenu.TeamTournamentInscription();
+                    MenuOption.TeamMenuOptions();
                     break;
                 case "5":
                     break;
                 case "6":
+                    TeamMenu.LeaveTournament();
+                    MenuOption.TeamMenuOptions();
                     break;
                 case "7":
                     MenuOption.MainMenuOptions();
@@ -107,12 +124,20 @@ namespace Option
             switch (seleccion)
             {
                 case "1":
+                    PlayerMenu.AddPlayer();
+                    MenuOption.PlayerMenuOptions();
                     break;
                 case "2":
+                    PlayerMenu.SearchPlayer();
+                    MenuOption.PlayerMenuOptions();
                     break;
                 case "3":
+                    PlayerMenu.UpdatePlayer();
+                    MenuOption.PlayerMenuOptions();
                     break;
                 case "4":
+                    PlayerMenu.DeletePlayer();
+                    MenuOption.PlayerMenuOptions();
                     break;
                 case "5":
                     MenuOption.MainMenuOptions();
@@ -133,8 +158,12 @@ namespace Option
             switch (seleccion)
             {
                 case "1":
+                    TransferMenu.BuyPlayer();
+                    MenuOption.TransactionMenuOptions();
                     break;
                 case "2":
+                    TransferMenu.LoanPlayer();
+                    MenuOption.TransactionMenuOptions();
                     break;
                 case "3":
                     MenuOption.MainMenuOptions();

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AdminLigas")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+02f5023847ab94a7c6aa9f0d0ad126e5983f6dff")]
 [assembly: System.Reflection.AssemblyProductAttribute("AdminLigas")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AdminLigas")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
