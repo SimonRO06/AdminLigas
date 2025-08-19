@@ -184,10 +184,16 @@ namespace Option
             switch (seleccion)
             {
                 case "1":
+                    PlayerMenu.MostAssistancePlayer();
+                    MenuOption.StadisticsMenuOptions();
                     break;
                 case "2":
+                    TeamMenu.MostGoalAgainst();
+                    MenuOption.StadisticsMenuOptions();
                     break;
                 case "3":
+                    TeamMenu.MostExpensivePlayersByTeam();
+                    MenuOption.StadisticsMenuOptions();
                     break;
                 case "4":
                     MenuOption.MainMenuOptions();

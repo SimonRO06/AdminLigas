@@ -26,9 +26,21 @@ namespace Transfer
 
             Console.Write("ID del jugador a comprar: ");
             int playerId = int.Parse(Console.ReadLine()!);
+            if (playerId <= 0)
+            {
+                Console.WriteLine("❌ El ID del jugador debe ser un número positivo.");
+                Console.ReadKey();
+                return;
+            }
 
             Console.Write("ID del equipo comprador: ");
             int toTeamId = int.Parse(Console.ReadLine()!);
+            if (toTeamId <= 0)
+            {
+                Console.WriteLine("❌ El ID del equipo debe ser un número positivo.");
+                Console.ReadKey();
+                return;
+            }
 
             using var conn = Shared.Helpers.DbHelper.GetConnection();
             conn.Open();
@@ -45,6 +57,12 @@ namespace Transfer
             }
 
             decimal price = reader.GetDecimal("precio");
+            if (price <= 0)
+            {
+                Console.WriteLine("❌ El jugador no está disponible para compra.");
+                Console.ReadKey();
+                return;
+            }
             int fromTeamId = reader.GetInt32("equipoId");
             reader.Close();
 
@@ -135,6 +153,12 @@ namespace Transfer
             }
 
             int fromTeamId = reader.GetInt32("equipoId");
+            if (fromTeamId == toTeamId)
+            {
+                Console.WriteLine("❌ El jugador ya pertenece a este equipo.");
+                Console.ReadKey();
+                return;
+            }
             reader.Close();
 
             using var transaction = conn.BeginTransaction();

@@ -27,9 +27,21 @@ namespace Tournament
             Console.WriteLine("=== Ingrese el nombre del nuevo torneo ===");
             Console.Write("-> ");
             name = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                Console.WriteLine("❌ El nombre es obligatorio.");
+                Console.ReadKey();
+                return;
+            }
 
             Console.Write("Tipo del torneo: ");
             type = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(type))
+            {
+                Console.WriteLine("❌ El tipo es obligatorio.");
+                Console.ReadKey();
+                return;
+            }
 
             Console.Write("Fecha de inicio (yyyy-MM-dd): ");
             creationDate = DateTime.Parse(Console.ReadLine() ?? DateTime.Now.ToString());
@@ -74,7 +86,13 @@ namespace Tournament
             Console.WriteLine("=== 🔍 Buscar Torneo por ID 🔍 ===");
             Console.Write("-> ");
             int id = Convert.ToInt32(Console.ReadLine());
-
+            if (id <= 0)
+            {
+                Console.WriteLine("❌ El ID debe ser un número positivo.");
+                Console.ReadKey();
+                return;
+            }
+            
             using var conn = Shared.Helpers.DbHelper.GetConnection();
             conn.Open();
 

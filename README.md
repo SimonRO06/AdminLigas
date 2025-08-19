@@ -15,7 +15,8 @@ CREATE TABLE Equipo (
     nombre VARCHAR(100) NOT NULL,
     tipo VARCHAR(50) NOT NULL,
     pais VARCHAR(50) NOT NULL,
-    dinero DECIMAL(15,2) DEFAULT 0
+    goles_contra INT NOT NULL DEFAULT 0,
+    dinero DECIMAL(15,2) NOT NULL DEFAULT 0
 );
 
 CREATE TABLE Jugador (
@@ -26,6 +27,7 @@ CREATE TABLE Jugador (
     dorsal INT NOT NULL,
     posicion VARCHAR(50) NOT NULL,
     precio DECIMAL(10,2) DEFAULT 0,
+    asistencias INT NOT NULL DEFAULT 0,
     equipoId INT,
     FOREIGN KEY (equipoId) REFERENCES Equipo(id)
 );
